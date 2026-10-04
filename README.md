@@ -1,8 +1,3 @@
-![Driver Version](https://shields.io)
-![Bus Status](https://shields.io)
-![Architecture](https://shields.io)
-![Project Type](https://shields.io)
-
 # Universal Validity Biometric WBF Driver Pack 🚀
 
 An independent custom laboratory project engineered exclusively for educational, hardware preservation, and low-level driver deployment purposes. This repository contains a universal framework to force-inject and bind an updated Windows Biometric Framework (WBF) driver onto the legacy **Validity Sensors** family embedded across multiple portable hardware ecosystems.
