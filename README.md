@@ -33,9 +33,9 @@ This unaligned deployment package successfully unlocks the lower biometric layer
 ---
 
 ## ⚡ Technical Automation Features
-1. **Automated UAC Self-Escalation:** The core deployment batch script monitors session privileges on execution and implicitly spawns a hidden PowerShell wrapper to auto-elevate itself to Administrator without complex multi-clicking [HP4420].
-2. **Direct Kernel Binding Injection:** Bypasses aggressive OS SetupAPI staging bugs that cause a "driver added but not installed" loop. It forces runtime hardware binding by compiling and executing a native C# call to `newdev.dll::UpdateDriverForPlugAndPlayDevices` [HP4420].
-3. **USB Hot Reload:** Performs a programmatic power-cycle on the root hubs after deployment to force-refresh and validate the new biometric descriptor stack [HP4420].
+1. **Automated UAC Self-Escalation:** The core deployment batch script monitors session privileges on execution and implicitly spawns a hidden PowerShell wrapper to auto-elevate itself to Administrator without complex multi-clicking.
+2. **Direct Kernel Binding Injection:** Bypasses aggressive OS SetupAPI staging bugs that cause a "driver added but not installed" loop. It forces runtime hardware binding by compiling and executing a native C# call to `newdev.dll::UpdateDriverForPlugAndPlayDevices`.
+3. **USB Hot Reload:** Performs a programmatic power-cycle on the root hubs after deployment to force-refresh and validate the new biometric descriptor stack.
 
 ---
 
@@ -67,21 +67,21 @@ Import-Certificate -FilePath "C_MixOS.cer" -CertStoreLocation "Cert:\LocalMachin
 ### Step 2: Running the Master Installer
 1. Ensure Test Signing mode is enabled on your Windows environment (`bcdedit /set testsigning on` if required for custom lab test catalogs).
 2. Simply double-click **`Instalar_Driver.bat`** using standard privileges.
-3. Accept the Windows User Account Control (UAC) prompt to allow the script to self-elevate [HP4420].
+3. Accept the Windows User Account Control (UAC) prompt to allow the script to self-elevate.
 4. On the deployment dashboard, type **`Y`** and press `Enter` to initiate the modular core flash.
-5. Check your Windows Device Manager; the sensor should immediately transition to the **Biometric Devices** class running version **4.9.532.1** [HP4420].
+5. Check your Windows Device Manager; the sensor should immediately transition to the **Biometric Devices** class running version **4.9.532.1**.
 
 ---
 
 ### 💻 Reference Lab Staging Node (Auditing Notes)
-* **Baseline Test Machine:** HP ProBook 4420s (used as the primary deployment matrix) [HP4420].
+* **Baseline Test Machine:** HP ProBook 4420s (used as the primary deployment matrix).
 * **Reference Processor:** Intel Core i5-560M CPU.
-* **Hardware Node Status:** Electrically active and verified as **OK** on the USB southbridge bus [HP4420].
+* **Hardware Node Status:** Electrically active and verified as **OK** on the USB southbridge bus.
 
 ---
 
 ## 📑 Lab Technical Summary & Verification
-Running the system verification audit tool inside a local administrative PowerShell terminal reveals the mapping matrix [HP4420]:
+Running the system verification audit tool inside a local administrative PowerShell terminal reveals the mapping matrix:
 
 ```powershell
 # Query actual physical bus mapping & Microsoft WBDI Interfacing bindings
@@ -89,7 +89,7 @@ Get-PnpDevice -InstanceId 'USB\VID_138A*' | Where-Object { $_.InstanceId -match 
 ```
 * **Expected Class Output:** `Biometric` (Instead of default *Unknown USB Device*).
 * **Expected Status Output:** `OK`.
-* **Active Interfacing GUID:** `{53D29EF7-EE5C-4774-A086-7B568B6070EC}` (WBDI) [HP4420].
+* **Active Interfacing GUID:** `{53D29EF7-EE5C-4774-A086-7B568B6070EC}` (WBDI).
 
 ---
 
