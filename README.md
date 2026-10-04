@@ -16,7 +16,7 @@ This unified framework universally targets and features native instruction mappi
 ---
 
 ## 📊 Driver Versioning Matrix
-* **Original Legacy Base Version:** `4.9.500.100` 
+* **Original Legacy Base Version:** `4.3.124.0` 
 * **Target Package Version (Spoof):** `4.9.532.1` 
 
 The upgrade path forces a progressive rank over legacy baseline branches, ensuring the Windows Plug and Play (PnP) engine updates the kernel stack without rolling back to obsolete device caches [HP4420].
