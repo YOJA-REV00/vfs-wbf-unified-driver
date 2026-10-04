@@ -66,7 +66,7 @@ Import-Certificate -FilePath "C_MixOS.cer" -CertStoreLocation "Cert:\LocalMachin
 
 ### Step 2: Running the Master Installer
 1. Ensure Test Signing mode is enabled on your Windows environment (`bcdedit /set testsigning on` if required for custom lab test catalogs).
-2. Simply double-click **`Instalar_Driver.bat`** using standard privileges.
+2. Simply double-click **`Installer_Driver.bat`** using standard privileges.
 3. Accept the Windows User Account Control (UAC) prompt to allow the script to self-elevate.
 4. On the deployment dashboard, type **`Y`** and press `Enter` to initiate the modular core flash.
 5. Check your Windows Device Manager; the sensor should immediately transition to the **Biometric Devices** class running version **4.9.532.1**.
