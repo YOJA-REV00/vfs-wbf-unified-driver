@@ -65,7 +65,7 @@ Import-Certificate -FilePath "C_MixOS.cer" -CertStoreLocation "Cert:\LocalMachin
 *Alternatively, you can double-click `C_MixOS.cer`, select **Install Certificate** -> **Local Machine** -> **Place all certificates in the following store** -> Browse -> **Trusted Root Certification Authorities**.*
 
 ### Step 2: Running the Master Installer
-1. Ensure Test Signing mode is enabled on your Windows environment (`bcdedit /set testsigning on` if required for custom lab test catalogs).
+1. OPTIONAL: Ensure Test Signing mode is enabled on your Windows environment (`bcdedit /set testsigning on` if required for custom lab test catalogs).
 2. Simply double-click **`Installer_Driver.bat`** using standard privileges.
 3. Accept the Windows User Account Control (UAC) prompt to allow the script to self-elevate.
 4. On the deployment dashboard, type **`Y`** and press `Enter` to initiate the modular core flash.
